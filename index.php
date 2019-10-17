@@ -56,6 +56,7 @@ $user_avatar = 'img/user.jpg';
     </header>
 
     <main class="container">
+
         <section class="promo">
             <h2 class="promo__title">Нужен стафф для катки?</h2>
             <p class="promo__text">На нашем интернет-аукционе ты найдёшь самое эксклюзивное сноубордическое и горнолыжное снаряжение.</p>
@@ -106,7 +107,15 @@ $user_avatar = 'img/user.jpg';
             </ul>
         </section>
     </main>
-
+    <?php $categories = ["Доски и лыжи", "Крепление", "Ботинки", "Одежда", "Инструменты", "Разное"]; ?>
+    <?php $announcement = [
+        0 => [
+            'title' => '2014 Rossignol District Snowboard',
+            'cat'   => 'Доски и лыжи',
+            'price' => '10999',
+            'url'   => 'img/lot-1.jpg'
+        ]
+    ]; ?>
     <footer class="main-footer">
         <nav class="nav">
             <ul class="nav__list container">
