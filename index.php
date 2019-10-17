@@ -85,74 +85,78 @@ $user_avatar = 'img/user.jpg';
             <div class="lots__header">
                 <h2>Открытые лоты</h2>
             </div>
-            <ul class="lots__list">
-                <li class="lots__item lot">
-                    <div class="lot__image">
-                        <img src="img/lot-1.jpg" width="350" height="260" alt="Сноуборд">
-                    </div>
-                    <div class="lot__info">
-                        <span class="lot__category">Доски и лыжи</span>
-                        <h3 class="lot__title"><a class="text-link" href="lot.html">2014 Rossignol District Snowboard</a></h3>
-                        <div class="lot__state">
-                            <div class="lot__rate">
-                                <span class="lot__amount">Стартовая цена</span>
-                                <span class="lot__cost">10 999<b class="rub">р</b></span>
-                            </div>
-                            <div class="lot__timer timer">
+            <?php $announcement = [
+                0 => [
+                    'title' => '2014 Rossignol District Snowboard',
+                    'cat'   => 'Доски и лыжи',
+                    'price' => '10999',
+                    'url'   => 'img/lot-1.jpg'
+                ],
+                1 => [
+                    'title' => 'DC Ply Mens 2016/2017 Snowboard',
+                    'cat'   => 'Доски и лыжи',
+                    'price' => '159999',
+                    'url'   => 'img/lot-2.jpg'
+                ],
+                2 => [
+                    'title' => 'Крепления Union Contact Pro 2015 года размер L/XL',
+                    'cat'   => 'Крепления',
+                    'price' => '8000',
+                    'url'   => 'img/lot-3.jpg'
+                ],
+                3 => [
+                    'title' => 'Ботинки для сноуборда DC Mutiny Charocal',
+                    'cat'   => 'Ботинки',
+                    'price' => '10999',
+                    'url'   => 'img/lot-4.jpg'
+                ],
+                4 => [
+                    'title' => 'Куртка для сноуборда DC Mutiny Charocal',
+                    'cat'   => 'Одежда',
+                    'price' => '7500',
+                    'url'   => 'img/lot-5.jpg'
+                ],
+                5 => [
+                    'title' => 'Маска Oakley Canopy',
+                    'cat'   => 'Разное',
+                    'price' => '5400',
+                    'url'   => 'img/lot-6.jpg'
+                ]
+            ]; ?>
 
+            <ul class="lots__list">
+                <?php foreach ($announcement as $value) { ?>
+
+                    <li class="lots__item lot">
+                        <div class="lot__image">
+                            <img src="<?php echo $value['url']; ?>" width="350" height="260" alt="Сноуборд">
+                        </div>
+                        <div class="lot__info">
+                            <span class="lot__category"><?php echo $value['cat']; ?></span>
+                            <h3 class="lot__title"><a class="text-link" href="lot.html"><?php echo $value['title']; ?></a></h3>
+                            <div class="lot__state">
+                                <div class="lot__rate">
+                                    <span class="lot__amount">Стартовая цена</span>
+                                    <span class="lot__cost"><?php echo $value['price']; ?><b class="rub">р</b></span>
+                                </div>
+                                <div class="lot__timer timer">
+
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
+                    </li>
+                <?php } ?>
+
             </ul>
         </section>
     </main>
     <?php $categories = ["Доски и лыжи", "Крепление", "Ботинки", "Одежда", "Инструменты", "Разное"]; ?>
-    <?php $announcement = [
-        0 => [
-            'title' => '2014 Rossignol District Snowboard',
-            'cat'   => 'Доски и лыжи',
-            'price' => '10999',
-            'url'   => 'img/lot-1.jpg'
-        ],
-        1 => [
-            'title' => 'DC Ply Mens 2016/2017 Snowboard',
-            'cat'   => 'Доски и лыжи',
-            'price' => '159999',
-            'url'   => 'img/lot-2.jpg'
-        ],
-        2 => [
-            'title' => 'Крепления Union Contact Pro 2015 года размер L/XL',
-            'cat'   => 'Крепления',
-            'price' => '8000',
-            'url'   => 'img/lot-3.jpg'
-        ],
-        3 => [
-            'title' => 'Ботинки для сноуборда DC Mutiny Charocal',
-            'cat'   => 'Ботинки',
-            'price' => '10999',
-            'url'   => 'img/lot-4.jpg'
-        ],
-        4 => [
-            'title' => 'Куртка для сноуборда DC Mutiny Charocal',
-            'cat'   => 'Одежда',
-            'price' => '7500',
-            'url'   => 'img/lot-5.jpg'
-        ],
-        5 => [
-            'title' => 'Маска Oakley Canopy',
-            'cat'   => 'Разное',
-            'price' => '5400',
-            'url'   => 'img/lot-6.jpg'
-        ]
-    ]; ?>
-
     <footer class="main-footer">
         <nav class="nav">
             <ul class="nav__list container">
                 <?php foreach ($categories as $value) { ?>
                     <li class="nav__item">
-                        <a href="all-lots.html"><?php echo $value; ?></a>
+                        <a href="all-lots.html"><?= $value; ?></a>
                     </li>
                 <?php } ?>
 
