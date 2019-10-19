@@ -119,12 +119,22 @@ $user_avatar = 'img/user.jpg';
                 5 => [
                     'title' => 'Маска Oakley Canopy',
                     'cat'   => 'Разное',
-                    'price' => '5400',
+                    'price' => '945.65',
                     'url'   => 'img/lot-6.jpg'
                 ]
             ]; ?>
 
             <ul class="lots__list">
+                <?php function ceiling($number)
+                {
+                    if ($number > 1000) {
+                        return (number_format(ceil($number), 0, ',', ' '));
+                    } else {
+                        return (ceil($number));
+                    }
+                } ?>
+
+
                 <?php foreach ($announcement as $value) { ?>
 
                     <li class="lots__item lot">
@@ -137,7 +147,10 @@ $user_avatar = 'img/user.jpg';
                             <div class="lot__state">
                                 <div class="lot__rate">
                                     <span class="lot__amount">Стартовая цена</span>
-                                    <span class="lot__cost"><?php echo $value['price']; ?><b class="rub">р</b></span>
+                                    <span class="lot__cost">
+                                        <?php echo ceiling($value['price']); ?>
+                                        <b class="rub">р</b>
+                                    </span>
                                 </div>
                                 <div class="lot__timer timer">
 
