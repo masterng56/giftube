@@ -3,6 +3,9 @@ $is_auth = (bool) rand(0, 1);
 
 $user_name = 'Константин';
 $user_avatar = 'img/user.jpg';
+require('data.php');
+
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -49,7 +52,7 @@ $user_avatar = 'img/user.jpg';
                     </ul>
                 <?php } ?>
 
-                
+
 
             </nav>
         </div>
@@ -116,7 +119,16 @@ $user_avatar = 'img/user.jpg';
                                     </span>
                                 </div>
                                 <div class="lot__timer timer">
-
+                                    <?php
+                                        //Получаем текущий timestamp
+                                        date_default_timezone_set("Europe/Moscow");
+                                        $ts = time();
+                                        $st_midnight = strtotime("tomorrow");
+                                        $sec_to_midnight = $st_midnight - $ts;
+                                        $hours = floor($sec_to_midnight / 3600);
+                                        $minutes = floor(($sec_to_midnight % 3600) / 60);
+                                        print("$hours : $minutes");
+                                        ?>
                                 </div>
                             </div>
                         </div>
@@ -126,7 +138,7 @@ $user_avatar = 'img/user.jpg';
             </ul>
         </section>
     </main>
-    <?php $categories = ["Доски и лыжи", "Крепление", "Ботинки", "Одежда", "Инструменты", "Разное"]; ?>
+
     <footer class="main-footer">
         <nav class="nav">
             <ul class="nav__list container">
