@@ -3,6 +3,7 @@ $is_auth = (bool) rand(0, 1);
 
 $user_name = 'Константин';
 $user_avatar = 'img/user.jpg';
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -15,7 +16,6 @@ $user_avatar = 'img/user.jpg';
 </head>
 
 <body>
-
     <header class="main-header">
         <div class="main-header__container container">
             <h1 class="visually-hidden">YetiCave</h1>
@@ -49,17 +49,17 @@ $user_avatar = 'img/user.jpg';
                     </ul>
                 <?php } ?>
 
-                
+
 
             </nav>
         </div>
     </header>
 
     <main class="container">
-        <?php $page_content ?>
+        <?= $content; ?>
     </main>
 
-   
+
     <footer class="main-footer">
         <nav class="nav">
             <ul class="nav__list container">
